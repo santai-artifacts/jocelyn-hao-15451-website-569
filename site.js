@@ -12,9 +12,29 @@
     );
   }
 
-  // ---- PDF preview modal --------------------------------------------------
+  // ---- PDF preview modal (rendered with PDF.js) ---------------------------
   const pdfLinks = document.querySelectorAll('a.pdf-link[href$=".pdf"]');
   if (pdfLinks.length) {
+    const PDFJS_VERSION = '3.11.174';
+    const CDN = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/${PDFJS_VERSION}`;
+
+    // Lazily load PDF.js only when a preview is first opened.
+    let libPromise = null;
+    const loadLib = () => {
+      if (libPromise) return libPromise;
+      libPromise = new Promise((resolve, reject) => {
+        const s = document.createElement('script');
+        s.src = `${CDN}/pdf.min.js`;
+        s.onload = () => {
+          window.pdfjsLib.GlobalWorkerOptions.workerSrc = `${CDN}/pdf.worker.min.js`;
+          resolve(window.pdfjsLib);
+        };
+        s.onerror = () => reject(new Error('Failed to load PDF.js'));
+        document.head.appendChild(s);
+      });
+      return libPromise;
+    };
+
     const modal = document.createElement('div');
     modal.className = 'pdf-modal';
     modal.setAttribute('role', 'dialog');
@@ -29,7 +49,7 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6M10 14 21 3"/></svg>
               <span>Open tab</span>
             </a>
-            <a class="pdf-modal__btn" data-download download href="#">
+            <a class="pdf-modal__btn" data-download href="#">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5M12 15V3"/></svg>
               <span>Download</span>
             </a>
@@ -38,30 +58,86 @@
             </button>
           </div>
         </div>
-        <iframe class="pdf-modal__frame" title="Lecture notes PDF"></iframe>
+        <div class="pdf-modal__doc" tabindex="0"></div>
       </div>`;
     document.body.appendChild(modal);
 
-    const frame = modal.querySelector('.pdf-modal__frame');
+    const docEl = modal.querySelector('.pdf-modal__doc');
     const titleEl = modal.querySelector('[data-title]');
     const openBtn = modal.querySelector('[data-open]');
     const dlBtn = modal.querySelector('[data-download]');
     let lastFocused = null;
+    let blobUrl = null;
+    let renderToken = 0; // guards against overlapping opens
+
+    const setStatus = (html) => { docEl.innerHTML = `<div class="pdf-status">${html}</div>`; };
+    const clearBlob = () => { if (blobUrl) { URL.revokeObjectURL(blobUrl); blobUrl = null; } };
+
+    const render = async (href, token) => {
+      try {
+        const lib = await loadLib();
+        if (token !== renderToken) return;
+        const resp = await fetch(href);
+        if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+        const data = await resp.arrayBuffer();
+        if (token !== renderToken) return;
+
+        // Blob URL powers "Open tab" / "Download" so they preview too.
+        clearBlob();
+        blobUrl = URL.createObjectURL(new Blob([data], { type: 'application/pdf' }));
+        openBtn.href = blobUrl;
+        dlBtn.href = blobUrl;
+
+        // Hand PDF.js a copy so the buffer above stays intact.
+        const pdf = await lib.getDocument({ data: data.slice(0) }).promise;
+        if (token !== renderToken) return;
+
+        docEl.innerHTML = '';
+        const avail = docEl.clientWidth - 32;
+        const dpr = Math.min(window.devicePixelRatio || 1, 2);
+        for (let n = 1; n <= pdf.numPages; n++) {
+          const page = await pdf.getPage(n);
+          if (token !== renderToken) return;
+          const base = page.getViewport({ scale: 1 });
+          const viewport = page.getViewport({ scale: Math.min(avail / base.width, 2) });
+          const canvas = document.createElement('canvas');
+          canvas.className = 'pdf-page';
+          canvas.width = Math.floor(viewport.width * dpr);
+          canvas.height = Math.floor(viewport.height * dpr);
+          canvas.style.width = viewport.width + 'px';
+          canvas.style.height = viewport.height + 'px';
+          const ctx = canvas.getContext('2d');
+          ctx.scale(dpr, dpr);
+          docEl.appendChild(canvas);
+          await page.render({ canvasContext: ctx, viewport }).promise;
+        }
+      } catch (err) {
+        if (token !== renderToken) return;
+        openBtn.href = href;
+        dlBtn.href = href;
+        dlBtn.setAttribute('download', '');
+        setStatus(
+          `Couldn't render the preview here.<br><a class="pdf-link" href="${href}" target="_blank" rel="noopener" style="margin-top:8px;">Open the PDF in a new tab</a>`
+        );
+      }
+    };
 
     const open = (href, label) => {
       lastFocused = document.activeElement;
       titleEl.textContent = label || 'Lecture notes';
-      openBtn.href = href;
-      dlBtn.href = href;
-      frame.src = href + '#view=FitH';
+      dlBtn.removeAttribute('download'); // blob download names itself; raw fallback re-adds it
+      setStatus('<div class="pdf-spinner"></div>Loading preview…');
       modal.classList.add('open');
       document.body.classList.add('pdf-open');
       modal.querySelector('[data-close]').focus();
+      render(href, ++renderToken);
     };
     const close = () => {
+      renderToken++; // cancel any in-flight render
       modal.classList.remove('open');
       document.body.classList.remove('pdf-open');
-      frame.src = 'about:blank';
+      docEl.innerHTML = '';
+      clearBlob();
       if (lastFocused) lastFocused.focus();
     };
 

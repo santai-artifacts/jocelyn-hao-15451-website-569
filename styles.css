@@ -308,7 +308,26 @@ tbody tr:hover { background: var(--bg-alt); }
 }
 .pdf-modal__close:hover { border-color: var(--red); color: var(--red); background: var(--red-tint); }
 .pdf-modal__close svg { width: 16px; height: 16px; }
-.pdf-modal__frame { flex: 1; width: 100%; border: none; background: var(--bg); }
+.pdf-modal__doc {
+  flex: 1; width: 100%; overflow-y: auto; background: var(--bg);
+  padding: 20px 16px; display: flex; flex-direction: column; align-items: center; gap: 16px;
+  scroll-behavior: smooth;
+}
+.pdf-page {
+  max-width: 100%; height: auto; border-radius: 4px;
+  box-shadow: 0 2px 12px rgba(20,20,25,.16); background: #fff;
+}
+.pdf-status {
+  margin: auto; display: flex; flex-direction: column; align-items: center; gap: 14px;
+  color: var(--muted); font-size: .92rem; text-align: center; padding: 30px;
+}
+.pdf-spinner {
+  width: 34px; height: 34px; border-radius: 50%;
+  border: 3px solid var(--line); border-top-color: var(--red);
+  animation: pdf-spin .8s linear infinite;
+}
+@keyframes pdf-spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .pdf-spinner { animation-duration: 2s; } }
 @media (max-width: 560px) {
   .pdf-modal__btn span { display: none; }
   .pdf-modal__btn { padding: 7px 9px; }
