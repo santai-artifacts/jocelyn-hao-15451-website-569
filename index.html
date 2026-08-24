@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>15-451/651: Algorithm Design and Analysis — Spring 2025</title>
+<meta name="description" content="15-451/651 Algorithm Design and Analysis at Carnegie Mellon University. Lectures, recitations, schedule, and course notes." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<header class="nav">
+  <div class="nav__inner">
+    <a class="nav__brand" href="index.html">
+      <span class="nav__mark">451</span>
+      <span>Algorithm Design &amp; Analysis</span>
+    </a>
+    <button class="nav__toggle" aria-label="Menu" aria-expanded="false">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+    <nav class="nav__links">
+      <a href="index.html" class="active">Overview</a>
+      <a href="staff.html">Staff</a>
+      <a href="schedule.html">Schedule</a>
+      <a href="policies.html">Policies</a>
+      <a href="integrity.html">Academic Integrity</a>
+      <span class="nav__sep"></span>
+      <a class="nav__ext" href="https://ohq.io" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>OHQ</a>
+      <a class="nav__ext" href="https://edstem.org" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>Ed</a>
+      <a class="nav__ext" href="https://gradescope.com" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg>Gradescope</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<div class="hero">
+  <div class="hero__grid-lines"></div>
+  <div class="hero__inner">
+    <span class="hero__badge"><span class="dot"></span>Carnegie Mellon University · Spring 2025</span>
+    <h1><span class="hero__course-no">15-451/651</span><br/>Algorithm Design and Analysis</h1>
+    <p class="hero__sub">Modeling problems, designing algorithms, and proving them correct &amp; efficient.</p>
+    <div class="hero__meta">
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Tue &amp; Thu · 12:30–1:50 PM</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>Doherty Hall 2315</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>25 lectures · 8 recitation sections</span>
+    </div>
+  </div>
+</div>
+
+<main class="wrap">
+
+  <!-- Course description -->
+  <section class="reveal">
+    <p class="section-eyebrow">The Course</p>
+    <h2 class="section-title">Course Description</h2>
+    <div class="prose">
+      <p>15-451/651 is an advanced undergraduate and masters-level course on the design and
+      analysis of algorithms. We study the <strong>modeling techniques</strong>, <strong>algorithmic
+      paradigms</strong>, and <strong>analysis methods</strong> that let us solve computational problems
+      efficiently — and prove that our solutions are correct and fast.</p>
+      <p>Topics span linear-time selection and sorting lower bounds, randomization and hashing,
+      amortized analysis and advanced data structures, dynamic programming, network flows, game
+      theory and linear programming, online and approximation algorithms, computational geometry,
+      and algebraic methods including the Fast Fourier Transform and gradient descent.</p>
+      <div class="callout">
+        <strong>Prerequisites.</strong> A minimum grade of C in 15-210, 21-241, and 15-251 (or 21-228).
+        You should be comfortable writing proofs and reasoning about asymptotic running time.
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick facts grid -->
+  <section class="reveal">
+    <div class="grid grid-2">
+      <div class="card info-card">
+        <div class="info-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2zM22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+        <div>
+          <h3>Lectures</h3>
+          <p><strong>Tuesday &amp; Thursday, 12:30–1:50 PM</strong> in Doherty Hall 2315.
+          Attendance is strongly encouraged but not required — lecture notes are posted on the
+          <a href="schedule.html">schedule</a>.</p>
+        </div>
+      </div>
+      <div class="card info-card">
+        <div class="info-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+        <div>
+          <h3>Office Hours</h3>
+          <p>Held throughout the week — see the <a href="#calendar">course calendar</a> below.
+          Always double-check the calendar before heading over, as times occasionally change.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recitations -->
+  <section class="reveal">
+    <p class="section-eyebrow">Fridays</p>
+    <h2 class="section-title">Recitations</h2>
+    <p class="section-lead">Recitations meet on Fridays and come in two flavors. You may switch
+      between sections and styles at any time — attend whichever suits how you like to learn.</p>
+
+    <div class="grid grid-2" style="margin:18px 0 22px;">
+      <div class="card info-card">
+        <div class="info-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
+        <div><h3><span class="tag tag--review">Review-heavy</span></h3>
+          <p style="margin-top:6px;">Spend extra time on definitions and key ideas before working
+          problems. A gentler pace — may not get through every problem.</p></div>
+      </div>
+      <div class="card info-card">
+        <div class="info-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+        <div><h3><span class="tag tag--problem">Problem-heavy</span></h3>
+          <p style="margin-top:6px;">Dive straight into the problems at a faster pace. Assumes you
+          have reviewed the material beforehand.</p></div>
+      </div>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Section</th><th>Style</th><th>Time</th><th>Location</th><th>Staff</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>A</strong></td><td><span class="tag tag--review">Review</span></td><td class="lec-date">9:30 AM</td><td>WEH 5320</td><td class="rec-staff">Ananya &amp; Marcus</td></tr>
+          <tr><td><strong>B</strong></td><td><span class="tag tag--problem">Problem</span></td><td class="lec-date">9:30 AM</td><td>PH 226B</td><td class="rec-staff">Devin &amp; Priya</td></tr>
+          <tr><td><strong>C</strong></td><td><span class="tag tag--review">Review</span></td><td class="lec-date">10:30 AM</td><td>WEH 5320</td><td class="rec-staff">Sofia &amp; Liam</td></tr>
+          <tr><td><strong>D</strong></td><td><span class="tag tag--problem">Problem</span></td><td class="lec-date">10:30 AM</td><td>PH 226B</td><td class="rec-staff">Noah &amp; Emily</td></tr>
+          <tr><td><strong>E</strong></td><td><span class="tag tag--review">Review</span></td><td class="lec-date">11:30 AM</td><td>WEH 5320</td><td class="rec-staff">Grace &amp; Omar</td></tr>
+          <tr><td><strong>F</strong></td><td><span class="tag tag--problem">Problem</span></td><td class="lec-date">11:30 AM</td><td>PH 226B</td><td class="rec-staff">Ravi &amp; Chloe</td></tr>
+          <tr><td><strong>G</strong></td><td><span class="tag tag--review">Review</span></td><td class="lec-date">12:30 PM</td><td>WEH 5320</td><td class="rec-staff">Hana &amp; Theo</td></tr>
+          <tr><td><strong>H</strong></td><td><span class="tag tag--problem">Problem</span></td><td class="lec-date">12:30 PM</td><td>PH 226B</td><td class="rec-staff">Isabel &amp; Kai</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Calendar -->
+  <section class="reveal" id="calendar">
+    <p class="section-eyebrow">Office Hours &amp; Deadlines</p>
+    <h2 class="section-title">Course Calendar</h2>
+    <p class="section-lead">Office hours, review sessions, and homework deadlines all live here.
+      Viewing may require signing in to your CMU Andrew Google account.</p>
+    <div style="margin-top:18px;">
+      <iframe class="cal-frame" title="Course calendar"
+        src="https://calendar.google.com/calendar/embed?src=en.usa%23holiday%40group.v.calendar.google.com&mode=WEEK&ctz=America/New_York"
+        loading="lazy"></iframe>
+      <p style="font-size:.82rem;color:var(--muted);margin-top:10px;">
+        A sample calendar is embedded above. Replace the <code>src</code> with the course's own
+        Google Calendar to show live office hours and deadlines.</p>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="footer__inner">
+    <div>
+      <div class="footer__brand"><span class="nav__mark" style="width:28px;height:28px;font-size:.66rem;">451</span> 15-451/651 · Algorithm Design and Analysis</div>
+      <p style="margin-top:8px;">© 2024–2025 Carnegie Mellon University. All rights reserved.</p>
+    </div>
+    <div class="footer__links">
+      <a href="schedule.html">Schedule</a>
+      <a href="staff.html">Staff</a>
+      <a href="policies.html">Policies</a>
+      <a href="integrity.html">Integrity</a>
+    </div>
+  </div>
+</footer>
+
+<script src="site.js"></script>
+</body>
+</html>

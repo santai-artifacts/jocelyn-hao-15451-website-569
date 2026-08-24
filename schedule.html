@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Schedule — 15-451/651 Algorithm Design and Analysis</title>
+<meta name="description" content="Lecture schedule and course notes for 15-451/651 Algorithm Design and Analysis, Spring 2025." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav__inner">
+    <a class="nav__brand" href="index.html"><span class="nav__mark">451</span><span>Algorithm Design &amp; Analysis</span></a>
+    <button class="nav__toggle" aria-label="Menu" aria-expanded="false">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+    <nav class="nav__links">
+      <a href="index.html">Overview</a>
+      <a href="staff.html">Staff</a>
+      <a href="schedule.html" class="active">Schedule</a>
+      <a href="policies.html">Policies</a>
+      <a href="integrity.html">Academic Integrity</a>
+      <span class="nav__sep"></span>
+      <a class="nav__ext" href="https://ohq.io" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>OHQ</a>
+      <a class="nav__ext" href="https://edstem.org" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>Ed</a>
+      <a class="nav__ext" href="https://gradescope.com" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg>Gradescope</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="hero__grid-lines"></div>
+  <div class="hero__inner">
+    <span class="hero__badge"><span class="dot"></span>Spring 2025</span>
+    <h1>Schedule &amp; Notes</h1>
+    <p class="hero__sub">25 lectures across nine units. Lecture notes are linked as they are covered.</p>
+  </div>
+</div>
+
+<main class="wrap">
+  <section class="reveal" style="margin-top:36px;">
+    <div class="callout">
+      <strong>Reading the schedule.</strong> Each row links to the typeset lecture notes (PDF).
+      Dates follow the Tuesday/Thursday lecture pattern; the schedule is approximate and may shift.
+    </div>
+
+    <div class="table-wrap" style="margin-top:22px;">
+      <table>
+        <thead>
+          <tr><th style="width:70px;">Lec</th><th style="width:96px;">Date</th><th>Topic</th><th style="width:120px;">Notes</th></tr>
+        </thead>
+        <tbody>
+
+          <tr class="sched-unit"><td colspan="4"><span class="u-idx">UNIT 1</span>Foundations &amp; Sorting</td></tr>
+          <tr>
+            <td><span class="lec-no">1</span></td><td class="lec-date">Jan 14</td>
+            <td><span class="lec-topic">Introduction &amp; Linear-time Selection</span><span class="lec-desc">Overview of algorithm analysis; Quicksort and finding the k-th smallest element in linear time.</span></td>
+            <td><a class="pdf-link" href="lectures/lecture01.pdf" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>PDF</a></td>
+          </tr>
+          <tr>
+            <td><span class="lec-no">2</span></td><td class="lec-date">Jan 16</td>
+            <td><span class="lec-topic">Concrete Models &amp; Lower Bounds</span><span class="lec-desc">Precise models of computation and matching upper and lower bounds, including the comparison model.</span></td>
+            <td><a class="pdf-link" href="lectures/lecture02.pdf" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>PDF</a></td>
+          </tr>
+          <tr>
+            <td><span class="lec-no">3</span></td><td class="lec-date">Jan 21</td>
+            <td><span class="lec-topic">Integer Sorting</span><span class="lec-desc">Beating the Ω(n log n) comparison bound: radix and counting sort for integer keys.</span></td>
+            <td><a class="pdf-link" href="lectures/lecture03.pdf" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>PDF</a></td>
+          </tr>
+
+          <tr class="sched-unit"><td colspan="4"><span class="u-idx">UNIT 2</span>Randomization &amp; Hashing</td></tr>
+          <tr>
+            <td><span class="lec-no">4</span></td><td class="lec-date">Jan 23</td>
+            <td><span class="lec-topic">Hashing: Universal &amp; Perfect Hashing</span><span class="lec-desc">The theory behind hashing: universal hash families and perfect hashing for static sets.</span></td>
+            <td><a class="pdf-link" href="lectures/lecture04.pdf" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>PDF</a></td>
+          </tr>
+          <tr>
+            <td><span class="lec-no">5</span></td><td class="lec-date">Jan 28</td>
+            <td><span class="lec-topic">Fingerprinting &amp; String Matching</span><span class="lec-desc">Arithmetic modulo primes to probabilistically test equality; the Karp–Rabin string matcher.</span></td>
+            <td><a class="pdf-link" href="lectures/lecture05.pdf" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>PDF</a></td>
+          </tr>
+          <tr>
+            <td><span class="lec-no">6</span></td><td class="lec-date">Jan 30</td>
+            <td><span class="lec-topic">Streaming Algorithms</span><span class="lec-desc">Computing over data far larger than memory using sublinear space.</span></td>
+            <td><a class="pdf-link" href="lectures/lecture06.pdf" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>PDF</a></td>
+          </tr>
+
+          <tr class="sched-unit"><td colspan="4"><span class="u-idx">UNIT 3</span>Amortization &amp; Data Structures</td></tr>
+          <tr>
+            <td><span class="lec-no">7</span></td><td class="lec-date">Feb 4</td>
+            <td><span class="lec-topic">Amortized Analysis</span><span class="lec-desc">Bounding the average cost per operation across a sequence: aggregate, banker's, and potential methods.</span></td>
+            <td><a class="pdf-link" href="lectures/lecture07.pdf" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>PDF</a></td>
+          </tr>
+          <tr>
+            <td><span class="lec-no">8</span></td><td class="lec-date">Feb 6</td>
+            <td><span class="lec-topic">Union-Find</span><span class="lec-desc">Disjoint-set data structures with union by rank and path compression; near-linear analysis.</span></td>
+            <td><a class="pdf-link" href="lectures/lecture08.pdf" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>PDF</a></td>
+          </tr>
+          <tr>
+            <td><span class="lec-no">9</span></td><td class="lec-date">Feb 11</td>
+            <td><span class="lec-topic">Range Query Data Structures</span><span class="lec-desc">Prefix sums, sparse tables, and segment trees for fast range queries.</span></td>
+            <td><a class="pdf-link" href="lectures/lecture09.pdf" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>PDF</a></td>
+          </tr>
+
+          <tr class="sched-unit"><td colspan="4"><span class="u-idx">UNIT 4</span>Dynamic Programming</td></tr>
+          <tr>
+            <td><span class="lec-no">10</span></td><td class="lec-date">Feb 13</td>
+            <td><span class="lec-topic">Dynamic Programming I</span><span class="lec-desc">DP over sequences and trees; optimal substructure and memoization.</span></td>
+            <td><a class="pdf-link" href="lectures/lecture10.pdf" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>PDF</a></td>
+          </tr>
+          <tr>
+            <td><span class="lec-no">11</span></td><td class="lec-date">Feb 18</td>
+            <td><span class="lec-topic">Dynamic Programming II</span><span class="lec-desc">Extending DP to further problem classes and state-space formulations.</span></td>
+            <td><a class="pdf-link" href="lectures/lecture11.pdf" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>PDF</a></td>
+          </tr>
+
+          <tr class="sched-unit"><td colspan="4"><span class="u-idx">UNIT 5</span>Network Flows &amp; Games</td></tr>
+          <tr>
+            <td><span class="lec-no">12</span></td><td class="lec-date">Feb 20</td>
+            <td><span class="lec-topic">Network Flows I</span><span class="lec-desc">The maximum-flow problem, augmenting paths, and the Ford–Fulkerson method.</span></td>
+            <td><a class="pdf-link" href="lectures/lecture12.pdf" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>PDF</a></td>
+          </tr>
+          <tr>
+            <td><span class="lec-no">13</span></td><td class="lec-date">Feb 25</td>
+            <td><span class="lec-topic">Network Flows II</span><span class="lec-desc">Faster max-flow via capacity scaling and the Edmonds–Karp shortest-augmenting-path rule.</span></td>
+            <td><a class="pdf-link" href="lectures/lecture13.pdf" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>PDF</a></td>
+          </tr>
+          <tr>
+            <td><span class="lec-no">14</span></td><td class="lec-date">Feb 27</td>
+            <td><span class="lec-topic">Matrix Games</span><span class="lec-desc">Two-player zero-sum games, the minimax theorem, and its ties to computer science.</span></td>
+            <td><a class="pdf-link" href="lectures/lecture14.pdf" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>PDF</a></td>
+          </tr>
+
+          <tr class="sched-unit"><td colspan="4"><span class="u-idx">UNIT 6</span>Linear Programming</td></tr>
+          <tr>
+            <td><span class="lec-no">15</span></td><td class="lec-date">Mar 4</td>
+            <td><span class="lec-topic">Linear Programming I</span><span class="lec-desc">Modeling problems as linear programs and the expressive power of LP.</span></td>
+            <td><a class="pdf-link" href="lectures/lecture15.pdf" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>PDF</a></td>
+          </tr>
+          <tr>
+            <td><span class="lec-no">16</span></td><td class="lec-date">Mar 6</td>
+            <td><span class="lec-topic">Linear Programming Duality</span><span class="lec-desc">LP duality as an algorithmic tool and a source of structural insight.</span></td>
+            <td><a class="pdf-link" href="lectures/lecture16.pdf" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>PDF</a></td>
+          </tr>
+
+          <tr class="sched-break"><td colspan="4">Spring Break · March 10 – 14 · No classes</td></tr>
+
+          <tr>
+            <td><span class="lec-no">17</span></td><td class="lec-date">Mar 18</td>
+            <td><span class="lec-topic">Linear Programming III</span><span class="lec-desc">Seidel's randomized algorithm for low-dimensional linear programming.</span></td>
+            <td><a class="pdf-link" href="lectures/lecture17.pdf" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>PDF</a></td>
+          </tr>
+
+          <tr class="sched-unit"><td colspan="4"><span class="u-idx">UNIT 7</span>Online &amp; Approximation</td></tr>
+          <tr>
+            <td><span class="lec-no">18</span></td><td class="lec-date">Mar 20</td>
+            <td><span class="lec-topic">Online Learning: The Experts Framework</span><span class="lec-desc">Making predictions from expert advice; the weighted majority and multiplicative-weights algorithms.</span></td>
+            <td><a class="pdf-link" href="lectures/lecture18.pdf" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>PDF</a></td>
+          </tr>
+          <tr>
+            <td><span class="lec-no">19</span></td><td class="lec-date">Mar 25</td>
+            <td><span class="lec-topic">Approximation Algorithms</span><span class="lec-desc">Coping with NP-hard optimization: provable approximation guarantees.</span></td>
+            <td><a class="pdf-link" href="lectures/lecture19.pdf" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>PDF</a></td>
+          </tr>
+          <tr>
+            <td><span class="lec-no">20</span></td><td class="lec-date">Mar 27</td>
+            <td><span class="lec-topic">Online Algorithms</span><span class="lec-desc">Competitive analysis when the algorithm lacks full information about the future.</span></td>
+            <td><a class="pdf-link" href="lectures/lecture20.pdf" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>PDF</a></td>
+          </tr>
+
+          <tr class="sched-unit"><td colspan="4"><span class="u-idx">UNIT 8</span>Computational Geometry</td></tr>
+          <tr>
+            <td><span class="lec-no">21</span></td><td class="lec-date">Apr 1</td>
+            <td><span class="lec-topic">Computational Geometry: Fundamentals</span><span class="lec-desc">Algorithms for geometric problems in two and three dimensions; convex hulls and orientation tests.</span></td>
+            <td><a class="pdf-link" href="lectures/lecture21.pdf" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>PDF</a></td>
+          </tr>
+          <tr>
+            <td><span class="lec-no">22</span></td><td class="lec-date">Apr 3</td>
+            <td><span class="lec-topic">Computational Geometry: Randomized Incremental Algorithms</span><span class="lec-desc">Randomized incremental construction and backwards analysis in geometry.</span></td>
+            <td><a class="pdf-link" href="lectures/lecture22.pdf" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>PDF</a></td>
+          </tr>
+
+          <tr class="sched-unit"><td colspan="4"><span class="u-idx">UNIT 9</span>Algebraic &amp; Continuous Methods</td></tr>
+          <tr>
+            <td><span class="lec-no">23</span></td><td class="lec-date">Apr 8</td>
+            <td><span class="lec-topic">Polynomials in Algorithm Design</span><span class="lec-desc">The power of polynomials: error-correcting codes and the ideas behind QR codes.</span></td>
+            <td><a class="pdf-link" href="lectures/lecture23.pdf" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>PDF</a></td>
+          </tr>
+          <tr>
+            <td><span class="lec-no">24</span></td><td class="lec-date">Apr 10</td>
+            <td><span class="lec-topic">The Fast Fourier Transform</span><span class="lec-desc">Multiplying degree-d polynomials in O(d log d) time via the FFT.</span></td>
+            <td><a class="pdf-link" href="lectures/lecture24.pdf" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>PDF</a></td>
+          </tr>
+          <tr>
+            <td><span class="lec-no">25</span></td><td class="lec-date">Apr 15</td>
+            <td><span class="lec-topic">Gradient Descent</span><span class="lec-desc">A general framework for approximately minimizing convex functions, with online applications.</span></td>
+            <td><a class="pdf-link" href="lectures/lecture25.pdf" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>PDF</a></td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:.82rem;color:var(--muted);margin-top:14px;">
+      Lecture titles and notes are drawn from the course materials. Dates are illustrative for a
+      Spring 2025 Tuesday/Thursday schedule and can be adjusted to match the official calendar.</p>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <div>
+      <div class="footer__brand"><span class="nav__mark" style="width:28px;height:28px;font-size:.66rem;">451</span> 15-451/651 · Algorithm Design and Analysis</div>
+      <p style="margin-top:8px;">© 2024–2025 Carnegie Mellon University. All rights reserved.</p>
+    </div>
+    <div class="footer__links">
+      <a href="schedule.html">Schedule</a><a href="staff.html">Staff</a><a href="policies.html">Policies</a><a href="integrity.html">Integrity</a>
+    </div>
+  </div>
+</footer>
+
+<script src="site.js"></script>
+</body>
+</html>
