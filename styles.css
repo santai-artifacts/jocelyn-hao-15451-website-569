@@ -89,6 +89,7 @@ p { margin: 0 0 1rem; }
   font-family: var(--font-mono); font-weight: 700; font-size: .78rem;
   box-shadow: var(--shadow-sm);
 }
+.nav__mark .fox-icon { width: 68%; height: 68%; display: block; }
 .nav__links { display: flex; align-items: center; gap: 2px; flex-wrap: wrap; }
 .nav__links a {
   color: var(--ink-soft); font-size: .92rem; font-weight: 500;
