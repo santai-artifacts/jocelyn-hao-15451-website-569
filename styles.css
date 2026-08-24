@@ -80,7 +80,10 @@ p { margin: 0 0 1rem; }
   display: flex; align-items: center; gap: 11px;
   font-family: var(--font-serif); font-weight: 700; font-size: 1.05rem;
   color: var(--ink); margin-right: auto; letter-spacing: -.01em;
+  white-space: nowrap;
 }
+.nav__brand span:last-child { white-space: nowrap; }
+.nav__mark { flex-shrink: 0; }
 .nav__brand:hover { color: var(--ink); }
 .nav__mark {
   display: grid; place-items: center;
